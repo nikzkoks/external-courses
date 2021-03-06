@@ -7,7 +7,9 @@ function whatInArray(array) {
     else if (element % 2) {
     ++oddElements;
     }
-    else ++evenElements;
+    else {
+        ++evenElements;
+    }
     });
     return [evenElements, oddElements, zeroElements];
     }
