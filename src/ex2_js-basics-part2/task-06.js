@@ -1,9 +1,9 @@
 function primeNumber(number) {
   let count = 0;
   if (number > 1000) {
-    return console.log("Please input number <= 1000!");
+    return "Данные неверны";
   } else if (number <= 1) {
-    return console.log("This number is " + number);
+    return "Это число - " + number;
   }
   for (let i = 2; i <= Math.sqrt(number); i++) {
     if (number % i === 0) {
@@ -12,8 +12,8 @@ function primeNumber(number) {
     }
   }
   if (count) {
-    return console.log("This is number not a prime!");
+    return "Число " + number + " - составное число";
   }
-  return console.log("This is number prime!");
+  return "Число " + number + " - простое число";
 }
 module.exports = primeNumber;

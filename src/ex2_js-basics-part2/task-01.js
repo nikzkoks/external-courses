@@ -1,5 +1,5 @@
 function checkValue(checkValue) {
-  if (isNaN(checkValue)) {
+  if (isNaN(checkValue) || checkValue === null) {
     return undefined;
   }
   if (typeof checkValue === "string" || "number") {
