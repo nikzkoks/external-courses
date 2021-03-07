@@ -1,10 +1,10 @@
 function checkValue(checkValue) {
-if (isNaN(checkValue)) {
+  if (isNaN(checkValue)) {
     return undefined;
-}
-if (typeof(checkValue) === 'string' || 'number') {
+  }
+  if (typeof checkValue === "string" || "number") {
     return typeof checkValue;
-}
-return console.log('Error. Input number or string!');
+  }
+  return console.log("Error. Input number or string!");
 }
 module.exports = checkValue;
