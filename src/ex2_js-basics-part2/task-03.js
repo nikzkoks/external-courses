@@ -3,7 +3,7 @@ function whatInArray(array) {
     oddElements = 0,
     zeroElements = 0;
   array.forEach((element) => {
-    if (element === 0) {
+    if (element === 0 || null) {
       ++zeroElements;
     } else if (element % 2) {
       ++oddElements;
