@@ -1,9 +1,7 @@
 function isValueInObject(string, object) {
   for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      if (string === key) {
-        return true;
-      }
+    if (string === key && object.hasOwnProperty(key)) {
+      return true;
     }
   }
   return false;

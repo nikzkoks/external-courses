@@ -1,13 +1,12 @@
 function addValueInObject(string, object) {
-  let objectMod = object;
+  let objectMod = Object.assign({}, object);
   for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      if (string === key) {
-        return true;
-      }
+    if (string === key && object.hasOwnProperty(key)) {
+      return true;
     }
   }
   objectMod[string] = "new";
-  return objectMod;
+  Object.assign(object, objectMod);
+  return object;
 }
 module.exports = addValueInObject;
