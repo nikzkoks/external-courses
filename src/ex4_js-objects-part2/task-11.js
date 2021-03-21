@@ -5,11 +5,11 @@ function calcEveryChar(string) {
     if (!arrayCounter[counter]) {
       arrayCounter[counter] = 0;
     }
-    arrayCounter[counter]++;
+    arrayCounter[counter] += 1;
   }
   for (let key in arrayCounter) {
     if (arrayCounter.hasOwnProperty(key)) {
-      console.log(key + " " + arrayCounter[key]);
+      console.log(`${Object.entries(arrayCounter)}`);
     }
   }
   return;
