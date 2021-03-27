@@ -4,6 +4,8 @@ function polyfillSome(array, callback) {
       return true;
     }
   }
+
   return false;
 }
+
 module.exports = polyfillSome;
