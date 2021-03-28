@@ -1,48 +1,25 @@
-function polyfillSlice(array, begin = 0, end = array.length) {
+function polyfillSlice(array, begin, end) {
   const newArray = [];
+  let beginArray = begin ? begin : 0;
+  let sizeArray = array.length;
+  let endArray = end ? end : array.length;
 
-  if (begin < 0 && end >= 0) {
-    if (begin + array.length < 0) {
-      for (let i = 0, j = 0; i < end && i < array.length; i++, j++) {
-        newArray[j] = array[i];
-      }
-
-      return newArray;
-    }
-    for (
-      let i = array.length + begin, j = 0;
-      i < end && i < array.length;
-      i++, j++
-    ) {
-      newArray[j] = array[i];
-    }
-
-    return newArray;
+  if (!begin) {
+    beginArray = 0;
+  } else {
+    beginArray = begin < 0 ? sizeArray + begin : beginArray;
   }
-  if (begin < 0 && end < 0) {
-    for (
-      let i = array.length + begin, j = 0;
-      i < array.length + end && i < array.length;
-      i++, j++
-    ) {
-      newArray[j] = array[i];
-    }
 
-    return newArray;
-  }
-  if (begin >= 0 && end < 0) {
-    for (
-      let i = begin, j = 0;
-      i < array.length + end && i < array.length;
-      i++, j++
-    ) {
-      newArray[j] = array[i];
-    }
+  beginArray = begin + sizeArray < 0 ? 0 : beginArray;
 
-    return newArray;
+  if (end < 0) {
+    endArray = sizeArray + end;
   }
-  for (let i = begin, j = 0; i < end && i < array.length; i++, j++) {
-    newArray[j] = array[i];
+
+  sizeArray = endArray - beginArray;
+
+  for (let i = 0; i < sizeArray; i++) {
+    newArray[i] = array[beginArray + i];
   }
 
   return newArray;

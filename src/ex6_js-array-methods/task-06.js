@@ -1,6 +1,6 @@
 function polyfillReduce(array, callback, initialValue) {
-  let previousValue,
-    i = 0;
+  let previousValue;
+  let i = 0;
 
   if (!isNaN(initialValue)) {
     previousValue = initialValue;
