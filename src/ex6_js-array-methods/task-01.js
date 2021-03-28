@@ -15,6 +15,9 @@ function polyfillSlice(array, begin, end) {
   if (end < 0) {
     endArray = sizeArray + end;
   }
+  if (end > array.length) {
+    endArray = array.length;
+  }
 
   sizeArray = endArray - beginArray;
 
