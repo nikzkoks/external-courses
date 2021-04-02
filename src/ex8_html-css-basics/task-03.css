@@ -1,0 +1,21 @@
+.task-03_1 {
+  width: 300px;
+  height: 200px;
+  background-color: aqua;
+  margin: 10px;
+  border: 4px solid #000000;
+}
+.task-03_2 {
+  width: 300px;
+  height: 200px;
+  background-color: aquamarine;
+  margin: 10px;
+  box-shadow: inset 4px 4px 5px #000, inset -4px -4px 5px #000;
+}
+.task-03_3 {
+  width: 300px;
+  height: 200px;
+  background-color: seagreen;
+  margin: 10px;
+  border: double 4px #000;
+}
