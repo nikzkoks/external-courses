@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #857f8d;
+}
+#wrapper {
+  margin: 10px;
+}
+#table {
+  border-collapse: collapse;
+  background: #f2f6fa;
+}
+th,
+td,
+tr {
+  border: 2px solid #fff;
+}
