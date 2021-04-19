@@ -6,7 +6,6 @@
 	height: 500px;
 	border-radius: 50%;
 	border: 5px solid rgba(228, 176, 72, 0.9);
-	/* clip-path: circle(40%); */
 }
 
 .wrapper-img:hover {
