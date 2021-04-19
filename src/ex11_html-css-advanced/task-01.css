@@ -1,0 +1,188 @@
+/* сбрасываем дефолтные внешние отступы */
+body {
+	margin: 0;
+}
+/* флекс-контейнер для всего задания */
+.app {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #585f63;
+}
+/* разметка блоков для всех 3-ех анимаций */
+.loader-wrapper,
+.ball-wrapper,
+.animation-wrapper {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	width: 80%;
+	height: 400px;
+	/* border: 1px solid #000; */
+}
+.loader-wrapper {
+	flex-flow: column nowrap;
+}
+.loader:hover,
+.ball:hover,
+.infinity-animation:hover {
+	cursor: pointer;
+}
+/* Первая анимация */
+.loader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+	width: 100px;
+	padding: 5px;
+	border-radius: 50%;
+	left: calc(50% - 50px);
+	top: calc(50% - 50px);
+	border: 5px dotted #f0d438;
+	animation: rotateLoader 2s linear infinite;
+}
+.loader_element__1 {
+	height: 30px;
+	width: 40px;
+	clip-path: polygon(
+		0% 20%,
+		60% 20%,
+		60% 0%,
+		100% 50%,
+		60% 100%,
+		60% 80%,
+		0% 80%
+	);
+	background: linear-gradient(45deg, #f1c01d, #96ec4f);
+	animation: scaleElement 2s linear infinite;
+}
+.loader_element__2 {
+	height: 30px;
+	width: 40px;
+	clip-path: polygon(
+		40% 0%,
+		40% 20%,
+		100% 20%,
+		100% 80%,
+		40% 80%,
+		40% 100%,
+		0% 50%
+	);
+	background: linear-gradient(45deg, #f1c01d, #96ec4f);
+	animation: scaleElement 2s linear infinite;
+}
+.loader-text {
+	margin: 10px;
+	padding: 10px;
+	font-weight: bold;
+	color: #f1c01d;
+	border-right: 2px dotted #96ec4f;
+	border-left: 2px dotted #96ec4f;
+	text-transform: uppercase;
+}
+@keyframes rotateLoader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes scaleElement {
+	0% {
+		transform: scale(0);
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+	}
+	50% {
+		transform: scale(1);
+		height: 30px;
+		width: 50px;
+		border-radius: 10px;
+	}
+	100% {
+		transform: scale(0);
+		border-radius: 50%;
+		height: 20px;
+		width: 20px;
+	}
+}
+/* Вторая анимация */
+.block-1,
+.block-2 {
+	width: 200px;
+	height: 100%;
+	background: linear-gradient(45deg, #000000, #7dd4fd);
+	box-shadow: 2px 2px 10px black;
+	border-radius: 15px;
+}
+.middle-block {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.ball {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: linear-gradient(90deg, #f1c01d, #96ec4f);
+	box-shadow: 2px 2px 10px black;
+	animation: jumping 1.5s ease-in-out infinite;
+}
+@keyframes jumping {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: calc(100% - 100px);
+	}
+
+	100% {
+		left: 0;
+	}
+}
+/* Третья анимация */
+.infinity-animation {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	animation: steps 7s ease-in-out infinite;
+}
+@keyframes steps {
+	0% {
+		border-radius: 100%;
+		background: radial-gradient(#f18239, #16e227);
+	}
+	16% {
+		border-radius: 0%;
+	}
+	32% {
+		background: linear-gradient(45deg, #f18239, #16e227);
+	}
+	48% {
+		transform: scale(1.5);
+		filter: opacity(0.4);
+	}
+	64% {
+		transform: rotate(360deg);
+	}
+	80% {
+		background: linear-gradient(315deg, #f18239, #16e227);
+	}
+	100% {
+		border-radius: 100%;
+		background: radial-gradient(#f18239, #16e227);
+	}
+}
