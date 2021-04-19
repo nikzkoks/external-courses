@@ -24,18 +24,20 @@ body {
 	margin: 20px;
 	width: 80%;
 	height: 400px;
-	/* border: 1px solid #000; */
 }
+
 .loader-wrapper {
 	flex-flow: column nowrap;
 }
-.loader:hover,
-.ball:hover,
-.infinity-animation:hover {
+
+.loader-wrapper__loader:hover,
+.middle-block__:hover,
+.animation-wrapper__infinity-animation:hover {
 	cursor: pointer;
 }
+
 /* Первая анимация */
-.loader {
+.loader-wrapper__loader {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -48,7 +50,8 @@ body {
 	border: 5px dotted #f0d438;
 	animation: rotateLoader 2s linear infinite;
 }
-.loader_element__1 {
+
+.loader__element-1 {
 	height: 30px;
 	width: 40px;
 	clip-path: polygon(
@@ -63,7 +66,8 @@ body {
 	background: linear-gradient(45deg, #f1c01d, #96ec4f);
 	animation: scaleElement 2s linear infinite;
 }
-.loader_element__2 {
+
+.loader__element-2 {
 	height: 30px;
 	width: 40px;
 	clip-path: polygon(
@@ -78,7 +82,8 @@ body {
 	background: linear-gradient(45deg, #f1c01d, #96ec4f);
 	animation: scaleElement 2s linear infinite;
 }
-.loader-text {
+
+.loader-wrapper__text {
 	margin: 10px;
 	padding: 10px;
 	font-weight: bold;
@@ -87,6 +92,7 @@ body {
 	border-left: 2px dotted #96ec4f;
 	text-transform: uppercase;
 }
+
 @keyframes rotateLoader {
 	0% {
 		transform: rotate(0deg);
@@ -95,6 +101,7 @@ body {
 		transform: rotate(360deg);
 	}
 }
+
 @keyframes scaleElement {
 	0% {
 		transform: scale(0);
@@ -115,22 +122,25 @@ body {
 		width: 20px;
 	}
 }
+
 /* Вторая анимация */
-.block-1,
-.block-2 {
+.ball-wrapper__block-1,
+.ball-wrapper__block-2 {
 	width: 200px;
 	height: 100%;
 	background: linear-gradient(45deg, #000000, #7dd4fd);
 	box-shadow: 2px 2px 10px black;
 	border-radius: 15px;
 }
-.middle-block {
+
+.ball-wrapper__middle-block {
 	width: 100%;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
-.ball {
+
+.middle-block__ball {
 	position: absolute;
 	width: 100px;
 	height: 100px;
@@ -139,6 +149,7 @@ body {
 	box-shadow: 2px 2px 10px black;
 	animation: jumping 1.5s ease-in-out infinite;
 }
+
 @keyframes jumping {
 	0% {
 		left: 0;
@@ -152,14 +163,16 @@ body {
 		left: 0;
 	}
 }
+
 /* Третья анимация */
-.infinity-animation {
+.animation-wrapper__infinity-animation {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
 
 	animation: steps 7s ease-in-out infinite;
 }
+
 @keyframes steps {
 	0% {
 		border-radius: 100%;
