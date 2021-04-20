@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="task-02.css" />
+		<title>Task-02</title>
+	</head>
+	<body>
+		<form class="form" action="http://httpbin.org/get" method="get">
+			<fieldset>
+				<legend>Personal data</legend>
+				<label class="label_block" for="surname"
+					>Surname
+					<input type="text" name="surname" id="surname" required />
+				</label>
+				<label class="label_block" for="first-name"
+					>First Name
+					<input type="text" name="first-name" id="first-name" required />
+				</label>
+				<label class="label_block" for="middle-name"
+					>Middle Name
+					<input type="text" name="middle-name" id="middle-name" />
+				</label>
+				<span>You are</span>
+				<label>
+					<input type="radio" name="male-female" value="male" required />male
+				</label>
+				<label>
+					<input type="radio" name="male-female" value="female" />female
+				</label>
+				<label class="label_block" for="age"
+					>Age
+					<input
+						type="number"
+						min="18"
+						max="101"
+						name="age"
+						id="age"
+						required
+					/>
+				</label>
+				<label class="label_block" for="country"
+					>Country of Residence
+					<select name="country" id="country">
+						<option value="Russian Federation" selected>
+							Russian Federation
+						</option>
+						<option value="USA">USA</option>
+						<option value="China">China</option>
+						<option value="Great Britain">Great Britain</option>
+						<option value="Brazil">Brazil</option>
+					</select>
+				</label>
+				<label class="label_block" for="city">City </label>
+				<label>
+					<input type="checkbox" name="city" value="Ryazan" id="city" />Ryazan
+				</label>
+				<label>
+					<input type="checkbox" name="city" value="Moscow" id="city_2" />Moscow
+				</label>
+
+				<label class="label_block" for="photography"
+					>Photography
+					<input type="file" name="photography" id="photography" />
+				</label>
+				<hr />
+				<label class="label_block" for="title"
+					>Title
+					<select name="title" id="title" multiple>
+						<optgroup label="Technologies">
+							<option value="Web Master" selected>Web Master</option>
+							<option value="Database Administrator">
+								Database Administrator
+							</option>
+							<option value="Computer-aided design">
+								Computer-aided design
+							</option>
+						</optgroup>
+						<optgroup label="Finance">
+							<option value="Economic Planning">Economic Planning</option>
+							<option value="Management accounting">
+								Management accounting
+							</option>
+							<option value="Budgeting and planning">
+								Budgeting and planning
+							</option>
+						</optgroup>
+					</select>
+				</label>
+				<label class="label_block" for="salary"
+					>Salary
+					<input
+						type="range"
+						name="salary"
+						id="salary"
+						min="20000"
+						max="200000"
+						value="150000"
+					/>
+				</label>
+				<textarea
+					name="commentary"
+					id="area"
+					cols="50"
+					rows="10"
+					placeholder="Tell us about yourself..."
+				></textarea>
+			</fieldset>
+			<fieldset>
+				<legend>Contact Information</legend>
+				<label class="label_block" for="site"
+					>Site
+					<input type="url" name="site" id="site" />
+				</label>
+				<label class="label_block" for="email"
+					>Email
+					<input type="email" name="email" id="email" required />
+				</label>
+				<label class="label_block" for="phone"
+					>Phone
+					<input
+						type="tel"
+						name="phone"
+						id="phone"
+						placeholder="+79519519511"
+						required
+					/>
+				</label>
+			</fieldset>
+			<label class="label_block" for="password"
+				>Password
+				<input type="password" name="password" id="password" required />
+			</label>
+			<input type="submit" value="Отправить" />
+			<input type="reset" value="Сбросить" />
+		</form>
+	</body>
+</html>
