@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Awesome Kanban Board</title>
+	</head>
+	<body>
+		<div class="app">
+			<header class="header">
+				<div class="logo">
+					<div class="logo__menu"></div>
+					<div class="logo__title">
+						<span>Awesome Kanban Board</span>
+					</div>
+				</div>
+				<div class="user">
+					<div class="user__button">
+						<div class="add-list__img"></div>
+						<div class="add-list__title">Create new list</div>
+					</div>
+					<div class="user-menu">
+						<div class="user-menu__avatar"></div>
+						<div class="user-menu__dropdown"></div>
+					</div>
+				</div>
+			</header>
+			<section class="main">
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Backlog</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">
+							Login page – performance issues
+						</div>
+						<div class="list-content__task">Sprint bugfix</div>
+					</div>
+					<div class="list-footer">
+						<div class="list-footer__add-card">
+							<div class="add-card__img"></div>
+							<div class="add-card__title">Add card</div>
+						</div>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Ready</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">Shop page – performance issues</div>
+						<div class="list-content__task">Checkout bugfix</div>
+						<div class="list-content__task">Shop bug1</div>
+						<div class="list-content__task">Shop bug2</div>
+						<div class="list-content__task">Shop bug3</div>
+						<div class="list-content__task">Shop bug4</div>
+						<div class="list-content__task">Shop bug5</div>
+						<div class="list-content__task">Shop bug6</div>
+						<div class="list-content__task">Shop page – performance issues</div>
+					</div>
+					<div class="list-footer">
+						<div class="list-footer__add-card">
+							<div class="add-card__img"></div>
+							<div class="add-card__title">Add card</div>
+						</div>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">In Progress</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">User page – performance issues</div>
+						<div class="list-content__task">Auth bugfix</div>
+					</div>
+					<div class="list-footer">
+						<div class="list-footer__add-card">
+							<div class="add-card__img"></div>
+							<div class="add-card__title">Add card</div>
+						</div>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Finished</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">Main page – performance issues</div>
+						<div class="list-content__task">Main page bugfix</div>
+					</div>
+					<div class="list-footer">
+						<div class="list-footer__add-card">
+							<div class="add-card__img"></div>
+							<div class="add-card__title">Add card</div>
+						</div>
+					</div>
+				</article>
+			</section>
+			<footer class="footer">
+				<div class="info-task">
+					<div class="info-task__active-tasks">
+						<label for="active-task">Active tasks: </label>
+						<span id="active-task"> &lt;N&gt; </span>
+					</div>
+					<div class="info-task__finished-tasks">
+						<label for="finished-task">Finished tasks:</label>
+						<span id="finished-task"> &lt;M&gt; </span>
+					</div>
+				</div>
+				<div class="info-developer">
+					<div class="info-developer__name-year">
+						Kanban board by <span id="developer-name">&lt;NAME&gt;</span> ,
+						<span id="developer-year">&lt;YEAR&gt;</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
