@@ -1,0 +1,172 @@
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+input {
+	border: none;
+}
+
+.form-wrapper {
+	padding: 20px;
+	width: 420px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid gray;
+}
+
+.header__burger {
+	width: 48px;
+	height: 48px;
+	background-image: url(../ex11_html-css-advanced/img/list.svg);
+}
+
+.header__button {
+	font-size: 20px;
+	color: gray;
+}
+
+.header__burger:hover {
+	cursor: pointer;
+}
+
+.header__button:hover {
+	color: rgb(0, 132, 255);
+	cursor: pointer;
+}
+
+.main {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.main__nav-button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.nav-button__location,
+.nav-button__category {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	margin: 5px;
+	border: 1px solid black;
+	padding: 2px 10px;
+	height: 30px;
+	width: 50%;
+	border-radius: 15px;
+	color: gray;
+}
+
+.nav-button__location_svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	background-repeat: no-repeat;
+	background-image: url(../ex11_html-css-advanced/img/location.svg);
+}
+
+.nav-button__category_svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	background-repeat: no-repeat;
+	background-image: url(../ex11_html-css-advanced/img/category.svg);
+}
+
+.main__input-content {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.main__input-content_column {
+	height: 30px;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.main__input-content_row-1 {
+	height: 30px;
+	display: flex;
+	flex-flow: row nowrap;
+	border-bottom: 1px solid gray;
+}
+
+.main__input-content_row-2 {
+	height: 30px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.main__input-content_row-3 {
+	height: 30px;
+	display: flex;
+	flex-flow: row nowrap;
+	border-top: 1px solid gray;
+}
+
+.form-wrapper__title {
+	justify-content: flex-end;
+	position: relative;
+}
+
+.form-wrapper__location {
+	justify-content: flex-end;
+	position: relative;
+}
+
+.form-wrapper__price {
+	justify-content: flex-end;
+	position: relative;
+	border-right: 1px solid gray;
+}
+
+.form-wrapper__description {
+	justify-content: flex-end;
+	position: relative;
+}
+
+label {
+	margin-top: 3px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: gray;
+	opacity: 0;
+	font-family: Arial;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 8px;
+	transition: all 0.3s linear;
+}
+
+input:invalid + label {
+	top: 10px;
+	opacity: 0;
+}
+
+input:valid + label {
+	opacity: 1;
+	top: 0;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:focus + label {
+	color: rgb(0, 132, 255);
+}
