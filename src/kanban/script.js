@@ -4,34 +4,30 @@ const userMenuAvatar = document.querySelector(".user-menu__avatar");
 const userMenuDropdown = document.querySelector(".user-menu__dropdown");
 const app = document.querySelector(".app");
 
-let flagUserMenu = false;
+let isUserMenuOpened = false;
 
-userMenuTemplate = `<div class="user-menu__list">
-<div class="list__item">My account</div>
-<div class="list__item">My tasks</div>
-<div class="list__item">Settings</div>
-<div class="list__item">Log out</div>
+userMenuTemplate = `
+<div class="user-menu__list">
+	<div class="list__item">My account</div>
+	<div class="list__item">My tasks</div>
+	<div class="list__item">Settings</div>
+	<div class="list__item">Log out</div>
 </div>
 `;
 
-showUserMenu = () => {
-	if (!flagUserMenu) {
+switchUserMenu = () => {
+	if (!isUserMenuOpened) {
 		const newUserMenu = document.createElement("div");
 		newUserMenu.innerHTML = userMenuTemplate;
 		user.appendChild(newUserMenu);
 		userMenuDropdown.style.transform = "scale(1,-1)";
-		flagUserMenu = true;
+		isUserMenuOpened = true;
 	} else {
 		const userMenuList = document.querySelector(".user-menu__list");
 		userMenuList.remove();
 		userMenuDropdown.style.transform = "scale(1,1)";
-		flagUserMenu = false;
+		isUserMenuOpened = false;
 	}
 };
 
-hideUserMenu = () => {
-	const userMenuList = document.querySelector(".user-menu__list");
-	userMenuList.remove();
-};
-
-userMenu.addEventListener("click", showUserMenu, true);
+userMenu.addEventListener("click", switchUserMenu, true);
