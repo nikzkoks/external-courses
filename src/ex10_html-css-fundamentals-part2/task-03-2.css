@@ -1,0 +1,21 @@
+.table__head {
+  font-size: 11px;
+  background: #e3eaf3;
+  text-transform: uppercase;
+}
+.table__head th {
+  padding: 5px;
+}
+.table__body tr:nth-child(2n) {
+  background: #e3eaf3;
+}
+.table__body td {
+  padding: 15px;
+}
+.table__body td:nth-child(1) {
+  text-transform: capitalize;
+}
+.table__body tr:hover {
+  background: #b8b8b8;
+  cursor: pointer;
+}

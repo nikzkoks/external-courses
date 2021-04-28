@@ -1,0 +1,69 @@
+/* Flex-обёртка для всех блоков */
+.wrapper-main {
+  display: flex;
+  flex-direction: column;
+}
+/* Задаём отступы для блоков */
+.wrapper-1,
+.wrapper-2,
+.wrapper-3 {
+  position: relative;
+  margin: 40px 40px;
+}
+/* Цветовая палитра блоков */
+.wrapper-1 .box {
+  background-color: greenyellow;
+}
+.wrapper-2 .box {
+  background-color: rgb(211, 183, 58);
+}
+.wrapper-3 .box {
+  background-color: rgb(221, 77, 33);
+}
+/* Размеры блока как в задании: width - в %, height - фиксированное значение */
+.box {
+  width: 30%;
+  height: 200px;
+}
+/* 1 блок с псевдоэлементом ПОСЛЕ*/
+.wrapper-1__block-1::after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  opacity: 0.7;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  z-index: -1;
+}
+/* 1 блок с псевдоэлементом ДО*/
+.wrapper-1__block-1::before {
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  opacity: 0.5;
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  z-index: -2;
+}
+/* 2 блок */
+.wrapper-2__block-1 {
+  box-shadow: 10px 10px 0 0 rgba(211, 183, 58, 0.7),
+    20px 20px 0 0 rgba(211, 183, 58, 0.5);
+}
+/* 3 блок состоит из 3 блоков (богатый русский язык :D)*/
+.wrapper-3__block-2 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  opacity: 0.7;
+}
+.wrapper-3__block-3 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0.5;
+}

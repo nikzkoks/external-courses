@@ -1,0 +1,14 @@
+.body-background {
+  color: rgb(0, 0, 0);
+  background-color: rgba(163, 146, 199, 0.8);
+}
+.body-background hr {
+  border: 3px outset rgb(230, 217, 43);
+}
+.test-div {
+  background-color: #1afa40;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  color: #0b0ec2;
+}

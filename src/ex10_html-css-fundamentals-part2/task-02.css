@@ -1,0 +1,32 @@
+form {
+	font-family: sans-serif;
+	font-size: 18px;
+}
+.label_block {
+	display: block;
+	margin: 10px 0px;
+}
+textarea[name="commentary"] {
+	resize: none;
+}
+input:invalid {
+	border: 1px solid;
+	animation: invalidValue 2s linear infinite;
+}
+input:hover {
+	animation-play-state: paused;
+}
+@keyframes invalidValue {
+	0% {
+		border-color: black;
+		color: black;
+	}
+	50% {
+		border-color: rgb(218, 65, 65);
+		color: rgb(218, 65, 65);
+	}
+	100% {
+		border-color: black;
+		color: black;
+	}
+}
