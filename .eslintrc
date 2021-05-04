@@ -64,11 +64,7 @@
     "radix": 2,
     "vars-on-top": 0,
     "wrap-iife": [2, "outside"],
-    "yoda": 2,
-    "quotes": ["error", "single"],
-    "template-curly-spacing": ["error", "never"],
-    "prefer-template": "error"
-
+    "yoda": 2
   },
   "settings": {
     "import/resolver": {
