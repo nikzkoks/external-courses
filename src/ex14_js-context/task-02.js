@@ -10,9 +10,9 @@ function Hangman(word) {
 	}
 	// return constructor object
 	return {
-		// 	guess
+		//     guess
 		guess: function (symbol) {
-			if (maxErrors > 0) {
+			if (maxErrors > 1) {
 				if (resultWord.some((i) => i === symbol.toLowerCase())) {
 					for (let i = 0; i < lengthResult; i++) {
 						if (resultWord[i] === symbol.toLowerCase()) {
@@ -26,6 +26,12 @@ function Hangman(word) {
 					}
 					console.log(`${this.getGuessedString()}`);
 				} else {
+					for (let i = 0; i < lengthResult; i++) {
+						if (symbol.toLowerCase() === wrongSymbols[i]) {
+							console.log('You input this letter!');
+							return this;
+						}
+					}
 					wrongSymbols.push(symbol.toLowerCase());
 					maxErrors--;
 					console.log(
