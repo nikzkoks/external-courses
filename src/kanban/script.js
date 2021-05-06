@@ -17,15 +17,6 @@ let isUserMenuOpened = false;
 let isDeleteTaskOpened = false;
 let draggedTask = null;
 
-const UserMenuTemplate = `
-<ul class="user-menu__list">
-	<li class="list__item">My account</li>
-	<li class="list__item">My tasks</li>
-	<li class="list__item">Settings</li>
-	<li class="list__item">Log out</li>
-</ul>
-`;
-
 // disable context menu on document
 document.oncontextmenu = () => {
 	return false;
@@ -52,6 +43,9 @@ userMenu.addEventListener('click', switchUserMenu, true);
 
 // add Task on click button +Add card
 function addTask() {
+	const lists = document.querySelectorAll('.list-content');
+	const tasks = document.querySelectorAll('.list-content__task');
+
 	if (this.parentNode.previousElementSibling === lists[0]) {
 		const newTask = document.createElement('input');
 		newTask.className = 'list-content__task';
@@ -70,7 +64,7 @@ function addTask() {
 
 		for (let i = 0; i < previousListContent.childElementCount; i++) {
 			let taskName = previousListContent.children[i].value;
-			const SelectTaskTemplate = `<option value="">
+			const SelectTaskTemplate = `<option value="${taskName}">
 			${taskName}
 		</option>`;
 
@@ -94,6 +88,7 @@ function addTask() {
 				this.parentNode.append(draggedTask);
 
 				selectorTasks.remove();
+				localStorage.setItem('main', JSON.stringify(main.innerHTML));
 				checkTasksInLists();
 			}
 		});
@@ -109,6 +104,8 @@ function addTask() {
 
 // getCounterTasks
 function getCounterTasks() {
+	const lists = document.querySelectorAll('.list-content');
+	const tasks = document.querySelectorAll('.list-content__task');
 	const activeTasks = document.querySelector('#active-task');
 	const finishedTasks = document.querySelector('#finished-task');
 
@@ -126,6 +123,7 @@ function getCounterTasks() {
 }
 // Disabled AddCard
 function checkTasksInLists() {
+	const lists = document.querySelectorAll('.list-content');
 	getCounterTasks();
 	lists.forEach(() => {
 		for (let i = 1; i < lists.length; i++) {
@@ -145,6 +143,7 @@ function deleteTask() {
 	markedTask.remove();
 	this.remove();
 	checkTasksInLists();
+	localStorage.setItem('main', JSON.stringify(main.innerHTML));
 }
 
 function deleteTaskMenu() {
@@ -189,6 +188,8 @@ function dragAndDrop() {
 				checkTasksInLists();
 			} else {
 				task.setAttribute('readonly', '');
+				task.setAttribute('value', `${task.value}`);
+				localStorage.setItem('main', JSON.stringify(main.innerHTML));
 				checkTasksInLists();
 			}
 		});
@@ -233,11 +234,22 @@ function dragAndDrop() {
 
 		list.addEventListener('drop', function (e) {
 			this.append(draggedTask);
+
 			checkTasksInLists();
+			localStorage.setItem('main', JSON.stringify(main.innerHTML));
 		});
 	});
 
 	getCounterTasks();
+	checkTasksInLists();
 }
 
+if (localStorage.getItem('main')) {
+	main.innerHTML = JSON.parse(localStorage.getItem('main'));
+	getCounterTasks();
+	checkTasksInLists();
+}
+
+getCounterTasks();
 dragAndDrop();
+checkTasksInLists();
