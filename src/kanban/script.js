@@ -65,10 +65,6 @@ function addTask() {
 		const newSelectTask = document.createElement('select');
 		newSelectTask.className = 'list-content__task_selector';
 
-		console.log(
-			this.parentNode.parentNode.previousElementSibling.firstElementChild
-				.nextElementSibling
-		);
 		const previousListContent = this.parentNode.parentNode
 			.previousElementSibling.firstElementChild.nextElementSibling;
 
@@ -127,8 +123,6 @@ function getCounterTasks() {
 
 	activeTasks.innerHTML = counterActive;
 	finishedTasks.innerHTML = counterFinished;
-	console.log(counterActive);
-	console.log(counterFinished);
 }
 // Disabled AddCard
 function checkTasksInLists() {
