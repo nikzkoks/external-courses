@@ -17,10 +17,10 @@
 					</div>
 				</div>
 				<div class="user">
-					<div class="user__button">
+					<button class="user__button">
 						<div class="add-list__img"></div>
 						<div class="add-list__title">Create new list</div>
-					</div>
+					</button>
 					<div class="user-menu">
 						<div class="user-menu__avatar"></div>
 						<div class="user-menu__dropdown"></div>
@@ -34,16 +34,17 @@
 						<div class="list-header__menu">...</div>
 					</div>
 					<div class="list-content">
-						<div class="list-content__task">
-							Login page – performance issues
-						</div>
-						<div class="list-content__task">Sprint bugfix</div>
+						<input
+							class="list-content__task"
+							type="text"
+							value="Login page – performance issues"
+						/>
 					</div>
 					<div class="list-footer">
-						<div class="list-footer__add-card">
-							<div class="add-card__img"></div>
-							<div class="add-card__title">Add card</div>
-						</div>
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
 					</div>
 				</article>
 				<article class="main__list">
@@ -52,21 +53,22 @@
 						<div class="list-header__menu">...</div>
 					</div>
 					<div class="list-content">
-						<div class="list-content__task">Shop page – performance issues</div>
-						<div class="list-content__task">Checkout bugfix</div>
-						<div class="list-content__task">Shop bug1</div>
-						<div class="list-content__task">Shop bug2</div>
-						<div class="list-content__task">Shop bug3</div>
-						<div class="list-content__task">Shop bug4</div>
-						<div class="list-content__task">Shop bug5</div>
-						<div class="list-content__task">Shop bug6</div>
-						<div class="list-content__task">Shop page – performance issues</div>
+						<input
+							class="list-content__task"
+							type="text"
+							value="Shop page – performance issues"
+						/>
+						<input
+							class="list-content__task"
+							type="text"
+							value="Checkout bugfix"
+						/>
 					</div>
 					<div class="list-footer">
-						<div class="list-footer__add-card">
-							<div class="add-card__img"></div>
-							<div class="add-card__title">Add card</div>
-						</div>
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
 					</div>
 				</article>
 				<article class="main__list">
@@ -75,14 +77,18 @@
 						<div class="list-header__menu">...</div>
 					</div>
 					<div class="list-content">
-						<div class="list-content__task">User page – performance issues</div>
-						<div class="list-content__task">Auth bugfix</div>
+						<input
+							class="list-content__task"
+							type="text"
+							value="User page – performance issues"
+						/>
+						<input class="list-content__task" type="text" value="Auth bugfix" />
 					</div>
 					<div class="list-footer">
-						<div class="list-footer__add-card">
-							<div class="add-card__img"></div>
-							<div class="add-card__title">Add card</div>
-						</div>
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
 					</div>
 				</article>
 				<article class="main__list">
@@ -91,14 +97,22 @@
 						<div class="list-header__menu">...</div>
 					</div>
 					<div class="list-content">
-						<div class="list-content__task">Main page – performance issues</div>
-						<div class="list-content__task">Main page bugfix</div>
+						<input
+							class="list-content__task"
+							type="text"
+							value="Main page – performance issues"
+						/>
+						<input
+							class="list-content__task"
+							type="text"
+							value="Main page bugfix"
+						/>
 					</div>
 					<div class="list-footer">
-						<div class="list-footer__add-card">
-							<div class="add-card__img"></div>
-							<div class="add-card__title">Add card</div>
-						</div>
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
 					</div>
 				</article>
 			</section>
@@ -117,8 +131,6 @@
 					<div class="info-developer__name-year">
 						Kanban board by <span id="developer-name">Nikita Khobotov</span>,
 						<span id="developer-year">2021</span>
-						Kanban board by <span id="developer-name">&lt;NAME&gt;</span> ,
-						<span id="developer-year">&lt;YEAR&gt;</span>
 					</div>
 				</div>
 			</footer>

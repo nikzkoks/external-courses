@@ -50,6 +50,7 @@ body {
 }
 
 .user__button {
+	border: none;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
@@ -58,6 +59,12 @@ body {
 	height: 33px;
 	background: #ffffff;
 	border-radius: 5px;
+}
+
+.user__button:hover {
+	background: #0079bf;
+	box-shadow: 0px 0px 4px 2px #fdfdfd;
+	color: #fdfdfd;
 }
 
 .add-list__img {
@@ -102,6 +109,8 @@ body {
 }
 
 .user-menu__list {
+	margin: 0;
+	width: 70px;
 	position: absolute;
 	top: 45px;
 	right: 0px;
@@ -139,7 +148,8 @@ body {
 	display: flex;
 	scroll-snap-type: x mandatory;
 	overflow-x: auto;
-	max-height: 500px;
+	min-height: 300px;
+	max-height: 600px;
 	padding: 10px 20px;
 	background: #0079bf;
 }
@@ -164,8 +174,8 @@ body {
 	width: 300px;
 	max-height: 450px;
 	height: min-content;
-	margin: 10px 10px 0px 10px;
-	background: #ebecf0;
+	margin: 10px 10px 10px 10px;
+	background: rgb(235, 236, 240);
 	border-radius: 10px;
 }
 
@@ -174,6 +184,7 @@ body {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	margin: 12px 12px 0px 12px;
+	position: relative;
 }
 
 .list-header__title {
@@ -192,6 +203,7 @@ body {
 	flex-flow: column nowrap;
 	scroll-snap-type: y proximity;
 	overflow-y: auto;
+	padding: 10px 0px;
 }
 
 .list-content::-webkit-scrollbar {
@@ -211,7 +223,40 @@ body {
 	margin: 15px 12px 0px 12px;
 	padding: 7px;
 	background: #ffffff;
+	border: none;
+	font-size: 14px;
 	border-radius: 5px;
+}
+.list-content__task_selector {
+	margin: 15px 12px 0px 12px;
+	padding: 7px;
+	background: #ffffff;
+	border: none;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.task__delete-button {
+	position: absolute;
+	top: 25px;
+	left: 220px;
+	background-color: rgb(255, 0, 0);
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	z-index: 20;
+}
+
+.task__delete-button:hover {
+	box-shadow: 0px 0px 4px 2px #0079bf;
+	cursor: pointer;
+}
+
+.list-content__task:hover {
+	background: rgba(0, 121, 191, 0.7);
+	border: 1px solid #0079bf;
+	animation: selectTask 0.2s ease-in;
+	z-index: 10;
 }
 
 .list-footer {
@@ -222,25 +267,40 @@ body {
 }
 
 .list-footer__add-card {
+	border: none;
+	border-radius: 5px;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
+	background: #0079bf;
+	font-size: 18px;
+	line-height: 21px;
+	color: #ffffff;
 }
 
 .add-card__img {
-	width: 16px;
-	height: 16px;
-	background-image: url(../kanban/assets/img/add-card.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
+	font-size: 20px;
 }
 
 .add-card__title {
 	margin-left: 3px;
-	font-size: 18px;
-	line-height: 21px;
-	color: #5e6c84;
+}
+
+.list-footer__add-card:hover:enabled {
+	box-shadow: 0px 0px 4px 2px #0079bf;
+
+	cursor: pointer;
+}
+
+.list-footer__add-card:disabled {
+	opacity: 0.4;
+	cursor: default;
+}
+
+.list-footer__add-card:focus {
+	box-shadow: 0px 0px 4px 2px #0079bf;
+	cursor: pointer;
 }
 
 .footer {
@@ -336,10 +396,27 @@ body {
 .logo__title,
 .user__button,
 .user-menu,
-.list-header__menu,
-.list-footer__add-card {
+.list-header__menu {
 	cursor: pointer;
 }
 .list-content__task {
 	cursor: move;
+}
+
+@keyframes selectTask {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-2deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
