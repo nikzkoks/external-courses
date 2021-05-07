@@ -22,6 +22,14 @@ document.oncontextmenu = () => {
 	return false;
 };
 
+const UserMenuTemplate = `
+<ul class="user-menu__list">
+	<li class="list__item">My account</li>
+	<li class="list__item">My tasks</li>
+	<li class="list__item">Settings</li>
+	<li class="list__item">Log out</li>
+</ul>
+`;
 const TaskTemplate = `<input class="list-content__task" type="text" value="" />`;
 
 function switchUserMenu() {

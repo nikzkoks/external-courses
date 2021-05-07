@@ -119,6 +119,7 @@ body {
 	align-items: flex-end;
 	background: rgba(0, 103, 163, 0.8);
 	border-bottom-left-radius: 10px;
+	z-index: 100;
 }
 
 .list__item {
