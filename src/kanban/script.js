@@ -96,7 +96,7 @@ function addTask() {
 				this.parentNode.append(draggedTask);
 
 				selectorTasks.remove();
-				localStorage.setItem('main', JSON.stringify(main.innerHTML));
+
 				checkTasksInLists();
 			}
 		});
@@ -142,6 +142,7 @@ function checkTasksInLists() {
 			}
 		}
 	});
+	localStorage.setItem('main', JSON.stringify(main.innerHTML));
 }
 
 // deleteTask - Context menu
@@ -197,7 +198,7 @@ function dragAndDrop() {
 			} else {
 				task.setAttribute('readonly', '');
 				task.setAttribute('value', `${task.value}`);
-				localStorage.setItem('main', JSON.stringify(main.innerHTML));
+
 				checkTasksInLists();
 			}
 		});
@@ -242,13 +243,11 @@ function dragAndDrop() {
 
 		list.addEventListener('drop', function (e) {
 			this.append(draggedTask);
-
-			checkTasksInLists();
+			draggedTask.style.display = 'block';
 			localStorage.setItem('main', JSON.stringify(main.innerHTML));
 		});
 	});
 
-	getCounterTasks();
 	checkTasksInLists();
 }
 
