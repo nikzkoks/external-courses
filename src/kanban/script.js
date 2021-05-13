@@ -1,21 +1,7 @@
-const user = document.querySelector('.user');
-const userMenu = document.querySelector('.user-menu');
-const userMenuAvatar = document.querySelector('.user-menu__avatar');
-const userMenuDropdown = document.querySelector('.user-menu__dropdown');
-const app = document.querySelector('.app');
-const header = document.querySelector('.header');
-const main = document.querySelector('.main');
-const footer = document.querySelector('.footer');
-const lists = document.querySelectorAll('.list-content');
-const tasks = document.querySelectorAll('.list-content__task');
-const addCard = document.querySelectorAll('.list-footer__add-card');
-const body = document.querySelector('body');
-
-const newUserMenu = document.createElement('div');
-
 let isUserMenuOpened = false;
 let isDeleteTaskOpened = false;
 let draggedTask = null;
+let markedTask = null;
 
 // disable context menu on document
 document.oncontextmenu = () => {
@@ -48,20 +34,28 @@ function switchUserMenu() {
 }
 userMenu.addEventListener('click', switchUserMenu, true);
 
+// render
+function render() {
+  getCounterTasks();
+  checkTasksInLists();
+}
+
 // add Task on click button +Add card
 function addTask() {
   const lists = document.querySelectorAll('.list-content');
   const tasks = document.querySelectorAll('.list-content__task');
 
   if (this.parentNode.previousElementSibling === lists[0]) {
+    const templateAddTask = `<div class="task__delete-button"></div>
+            <p class="task__text"></p>`;
     const newTask = document.createElement('input');
     newTask.className = 'list-content__task';
-    newTask.type = 'text';
+    newTask.innerHTML = templateAddTask;
     this.parentNode.previousElementSibling.appendChild(newTask);
-    newTask.focus();
 
-    checkTasksInLists();
+    newTask.focus();
     dragAndDrop();
+    render();
   } else {
     const newSelectTask = document.createElement('select');
     newSelectTask.className = 'list-content__task_selector';
@@ -71,7 +65,10 @@ function addTask() {
         .nextElementSibling;
 
     for (let i = 0; i < previousListContent.childElementCount; i++) {
-      let taskName = previousListContent.children[i].value;
+      let taskName =
+        previousListContent.children[i].firstElementChild.nextElementSibling
+          .innerText;
+      console.log(taskName);
       const selectTaskTemplate = `<option value="${taskName}">
       ${taskName}
     </option>`;
@@ -90,24 +87,29 @@ function addTask() {
     selectorTasks.addEventListener('blur', function () {
       if (selectorTasks.selectedIndex === -1) {
         selectorTasks.remove();
-        checkTasksInLists();
+        render();
       } else {
         draggedTask = previousListContent.children[selectorTasks.selectedIndex];
         this.parentNode.append(draggedTask);
-
         selectorTasks.remove();
-
-        checkTasksInLists();
+        render();
       }
     });
     selectorTasks.addEventListener('keydown', function (e) {
-      if (e.keyCode === 13) {
+      if (e.keyCode === keyEnter) {
         selectorTasks.blur();
       }
     });
-    dragAndDrop();
-    checkTasksInLists();
+    render();
   }
+}
+
+// deleteTask - Context menu
+function deleteTask() {
+  this.parentNode.remove();
+  this.remove();
+  render();
+  localStorage.setItem('main', JSON.stringify(main.innerHTML));
 }
 
 // getCounterTasks
@@ -128,10 +130,18 @@ function getCounterTasks() {
   activeTasks.innerHTML = counterActive;
   finishedTasks.innerHTML = counterFinished;
 }
+
 // Disabled AddCard
 function checkTasksInLists() {
   const lists = document.querySelectorAll('.list-content');
-  getCounterTasks();
+  const deleteTaskButton = document.querySelectorAll('.task__delete-button');
+
+  if (deleteTaskButton !== null) {
+    deleteTaskButton.forEach((button) => {
+      button.addEventListener('click', deleteTask, true);
+    });
+  }
+
   lists.forEach(() => {
     for (let i = 1; i < lists.length; i++) {
       if (lists[i - 1].childElementCount === 0 && lists[i] !== lists[0]) {
@@ -144,46 +154,11 @@ function checkTasksInLists() {
   localStorage.setItem('main', JSON.stringify(main.innerHTML));
 }
 
-// deleteTask - Context menu
-let markedTask = null;
-
-function deleteTask() {
-  markedTask.remove();
-  this.remove();
-  checkTasksInLists();
-  localStorage.setItem('main', JSON.stringify(main.innerHTML));
-}
-
-function deleteTaskMenu() {
-  if (!isDeleteTaskOpened) {
-    const newDeleteTask = document.createElement('button');
-    newDeleteTask.className = 'task__delete-button';
-    newDeleteTask.innerText = 'Delete';
-    this.parentNode.previousElementSibling.appendChild(newDeleteTask);
-
-    isDeleteTaskOpened = true;
-
-    markedTask = this;
-    newDeleteTask.addEventListener('click', deleteTask, true);
-
-    main.addEventListener('click', deleteTaskMenu, true);
-  } else {
-    main.removeEventListener('click', deleteTaskMenu, true);
-    const deleteTaskButton = document.querySelector('.task__delete-button');
-    deleteTaskButton.remove();
-    isDeleteTaskOpened = false;
-  }
-  checkTasksInLists();
-}
 // Drag and drop tasks
 function dragAndDrop() {
   const lists = document.querySelectorAll('.list-content');
   const tasks = document.querySelectorAll('.list-content__task');
   const addCard = document.querySelectorAll('.list-footer__add-card');
-
-  tasks.forEach((task) => {
-    task.addEventListener('contextmenu', deleteTaskMenu, true);
-  });
 
   addCard.forEach((addCardButton) => {
     addCardButton.addEventListener('click', addTask, true);
@@ -193,16 +168,22 @@ function dragAndDrop() {
     task.addEventListener('blur', function () {
       if (task.value === '') {
         task.remove();
-        checkTasksInLists();
+        render();
       } else {
-        task.setAttribute('readonly', '');
-        task.setAttribute('value', `${task.value}`);
+        const templateAddTask = `<div class="task__delete-button"></div>
+            <p class="task__text">${task.value}</p>`;
+        const newTask = document.createElement('div');
+        newTask.className = 'list-content__task';
+        newTask.setAttribute('draggable', 'true');
+        newTask.innerHTML = templateAddTask;
+        task.parentNode.appendChild(newTask);
+        task.remove();
 
-        checkTasksInLists();
+        render();
       }
     });
     task.addEventListener('keydown', function (e) {
-      if (e.keyCode === 13) {
+      if (e.keyCode === keyEnter) {
         task.blur();
       }
     });
@@ -211,6 +192,7 @@ function dragAndDrop() {
   tasks.forEach((task) => {
     task.setAttribute('draggable', 'true');
   });
+
   tasks.forEach((task) => {
     task.addEventListener('dragstart', function () {
       draggedTask = task;
@@ -221,7 +203,7 @@ function dragAndDrop() {
     task.addEventListener('dragend', function () {
       draggedTask = task;
       setTimeout(() => {
-        this.style.display = 'block';
+        this.style.display = 'flex';
         draggedTask = null;
       }, 0);
     });
@@ -242,21 +224,19 @@ function dragAndDrop() {
 
     list.addEventListener('drop', function (e) {
       this.append(draggedTask);
-      draggedTask.style.display = 'block';
-      getCounterTasks();
+      draggedTask.style.display = 'flex';
+      render();
       localStorage.setItem('main', JSON.stringify(main.innerHTML));
     });
   });
 
-  checkTasksInLists();
+  render();
 }
 
 if (localStorage.getItem('main')) {
   main.innerHTML = JSON.parse(localStorage.getItem('main'));
-  getCounterTasks();
-  checkTasksInLists();
+  render();
 }
 
-getCounterTasks();
+render();
 dragAndDrop();
-checkTasksInLists();

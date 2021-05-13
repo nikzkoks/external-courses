@@ -1,396 +1,403 @@
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .app {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	color: #000000;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
 }
 
 .header {
-	height: 45px;
-	padding: 5px 0px 5px 14px;
-	background: #0067a3;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
+  height: 45px;
+  padding: 5px 0px 5px 14px;
+  background: #0067a3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 .logo__menu {
-	width: 45px;
-	height: 45px;
-	background-image: url(../kanban/assets/img/logo.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+  background-image: url(../kanban/assets/img/logo.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .logo__title {
-	margin-left: 8px;
-	font-size: 28px;
-	line-height: 33px;
-	color: #ffffff;
+  margin-left: 8px;
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
 }
 
 .user {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-end;
-	align-items: center;
-	position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
 }
 
 .user__button {
-	border: none;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
-	width: 181px;
-	height: 33px;
-	background: #ffffff;
-	border-radius: 5px;
+  border: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 181px;
+  height: 33px;
+  background: #ffffff;
+  border-radius: 5px;
 }
 
 .user__button:hover {
-	background: #0079bf;
-	box-shadow: 0px 0px 4px 2px #fdfdfd;
-	color: #fdfdfd;
+  background: #0079bf;
+  box-shadow: 0px 0px 4px 2px #fdfdfd;
+  color: #fdfdfd;
 }
 
 .add-list__img {
-	margin-left: 8px;
-	width: 24px;
-	height: 24px;
-	background-image: url(../kanban/assets/img/add-list.svg);
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  background-image: url(../kanban/assets/img/add-list.svg);
 }
 
 .add-list__title {
-	margin-left: 12px;
-	font-size: 18px;
-	line-height: 21px;
+  margin-left: 12px;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .user-menu {
-	margin-left: 49px;
-	width: 64px;
-	height: 40px;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
+  margin-left: 49px;
+  width: 64px;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .user-menu__avatar {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	background-color: #ffffff;
-	background-image: url(../kanban/assets/img/user-in-avatar.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  background-image: url(../kanban/assets/img/user-in-avatar.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .user-menu__dropdown {
-	width: 24px;
-	height: 24px;
-	background-image: url(../kanban/assets/img/arrow.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  background-image: url(../kanban/assets/img/arrow.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .user-menu__list {
-	margin: 0;
-	width: 70px;
-	position: absolute;
-	top: 45px;
-	right: 0px;
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: flex-end;
-	background: rgba(0, 103, 163, 0.8);
-	border-bottom-left-radius: 10px;
-	z-index: 100;
+  margin: 0;
+  width: 70px;
+  position: absolute;
+  top: 45px;
+  right: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  background: rgba(0, 103, 163, 0.8);
+  border-bottom-left-radius: 10px;
+  z-index: 100;
 }
 
 .list__item {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	width: 90px;
-	padding: 5px 10px;
-	font-size: 16px;
-	line-height: 21px;
-	color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 90px;
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
 .list__item:nth-child(n) {
-	border-bottom: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
 }
 .list__item:last-child {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .list__item:hover {
-	cursor: pointer;
-	color: #cbcbcb;
+  cursor: pointer;
+  color: #cbcbcb;
 }
 
 .main {
-	display: flex;
-	scroll-snap-type: x mandatory;
-	overflow-x: auto;
-	min-height: 300px;
-	max-height: 600px;
-	padding: 10px 20px;
-	background: #0079bf;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  min-height: 300px;
+  max-height: 600px;
+  padding: 10px 20px;
+  background: #0079bf;
 }
 
 .main::-webkit-scrollbar {
-	width: 12px;
+  width: 12px;
 }
 
 .main::-webkit-scrollbar-track {
-	background: #ffffff;
+  background: #ffffff;
 }
 
 .main::-webkit-scrollbar-thumb {
-	background: #cbcbcb;
-	border-radius: 10px;
+  background: #cbcbcb;
+  border-radius: 10px;
 }
 
 .main__list {
-	display: flex;
-	flex: none;
-	flex-flow: column nowrap;
-	width: 300px;
-	max-height: 450px;
-	height: min-content;
-	margin: 10px 10px 10px 10px;
-	background: rgb(235, 236, 240);
-	border-radius: 10px;
+  display: flex;
+  flex: none;
+  flex-flow: column nowrap;
+  width: 300px;
+  max-height: 450px;
+  height: min-content;
+  margin: 10px 10px 10px 10px;
+  background: rgb(235, 236, 240);
+  border-radius: 10px;
 }
 
 .list-header {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	margin: 12px 12px 0px 12px;
-	position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 12px 12px 0px 12px;
+  position: relative;
 }
 
 .list-header__title {
-	font-size: 18px;
-	line-height: 21px;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .list-header__menu {
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 21px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .list-content {
-	display: flex;
-	flex-flow: column nowrap;
-	scroll-snap-type: y proximity;
-	overflow-y: auto;
-	padding: 10px 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  padding: 10px 0px;
 }
 
 .list-content::-webkit-scrollbar {
-	width: 12px;
+  width: 12px;
 }
 
 .list-content::-webkit-scrollbar-track {
-	background: #ffffff;
+  background: #ffffff;
 }
 
 .list-content::-webkit-scrollbar-thumb {
-	background: #cbcbcb;
-	border-radius: 10px;
+  background: #cbcbcb;
+  border-radius: 10px;
 }
 
 .list-content__task {
-	margin: 15px 12px 0px 12px;
-	padding: 7px;
-	background: #ffffff;
-	border: none;
-	font-size: 14px;
-	border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 15px 12px 0px 12px;
+  padding: 10px;
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.task__text {
+  margin: 0;
 }
 .list-content__task_selector {
-	margin: 15px 12px 0px 12px;
-	padding: 7px;
-	background: #ffffff;
-	border: none;
-	font-size: 14px;
-	border-radius: 5px;
+  margin: 15px 12px 0px 12px;
+  padding: 5px;
+  background: #ffffff;
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
 }
+
 .task__delete-button {
-	position: absolute;
-	top: 25px;
-	left: 220px;
-	background-color: rgb(255, 0, 0);
-	font-size: 14px;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	z-index: 20;
+  border-radius: 5px;
+  margin: 0px 5px 0px 0px;
+  width: 20px;
+  height: 20px;
+  background: url(../kanban/assets/img/delete-task.svg);
+
+  z-index: 20;
 }
 
 .task__delete-button:hover {
-	box-shadow: 0px 0px 4px 2px #0079bf;
-	cursor: pointer;
+  box-shadow: 0px 0px 4px 2px #0079bf;
+  cursor: pointer;
 }
 
 .list-content__task:hover {
-	background: rgba(0, 121, 191, 0.7);
-	border: 1px solid #0079bf;
-	animation: selectTask 0.2s ease-in;
-	z-index: 10;
+  background: rgba(0, 121, 191, 0.7);
+  border: 1px solid #0079bf;
+  animation: selectTask 0.2s ease-in;
+  z-index: 10;
 }
 
 .list-footer {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	margin: 15px 12px 8px 12px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 15px 12px 8px 12px;
 }
 
 .list-footer__add-card {
-	border: none;
-	border-radius: 5px;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-	background: #0079bf;
-	font-size: 18px;
-	line-height: 21px;
-	color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #0079bf;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
 .add-card__img {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 .add-card__title {
-	margin-left: 3px;
+  margin-left: 3px;
 }
 
 .list-footer__add-card:hover:enabled {
-	box-shadow: 0px 0px 4px 2px #0079bf;
+  box-shadow: 0px 0px 4px 2px #0079bf;
 
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .list-footer__add-card:disabled {
-	opacity: 0.4;
-	cursor: default;
+  opacity: 0.4;
+  cursor: default;
 }
 
 .list-footer__add-card:focus {
-	box-shadow: 0px 0px 4px 2px #0079bf;
-	cursor: pointer;
+  box-shadow: 0px 0px 4px 2px #0079bf;
+  cursor: pointer;
 }
 
 .footer {
-	height: 55px;
-	background: #0067a3;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
+  height: 55px;
+  background: #0067a3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .info-task {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
-	margin-left: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 70px;
 }
 
 .info-task__active-tasks {
-	font-size: 18px;
-	line-height: 21px;
-	color: #ffffff;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
 .info-task__finished-tasks {
-	font-size: 18px;
-	line-height: 21px;
-	color: #ffffff;
-	margin-left: 35px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 35px;
 }
 
 .info-developer {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
-	margin-right: 24px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 24px;
 }
 
 .info-developer__name-year {
-	font-size: 18px;
-	line-height: 21px;
-	color: #ffffff;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
-	.header {
-		height: 90px;
-		flex-flow: column nowrap;
-	}
+  .header {
+    height: 90px;
+    flex-flow: column nowrap;
+  }
 
-	.footer {
-		height: 110px;
-		flex-flow: column nowrap;
-		justify-content: space-around;
-		align-items: center;
-	}
+  .footer {
+    height: 110px;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-	.info-task {
-		margin-left: 0px;
-	}
+  .info-task {
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 400px) {
-	.logo__menu {
-		width: 32px;
-		height: 32px;
-	}
+  .logo__menu {
+    width: 32px;
+    height: 32px;
+  }
 
-	.logo__title {
-		font-size: 20px;
-		line-height: 25px;
-	}
+  .logo__title {
+    font-size: 20px;
+    line-height: 25px;
+  }
 
-	.user-menu {
-		margin-left: 10px;
-	}
+  .user-menu {
+    margin-left: 10px;
+  }
 
-	.header {
-		height: 90px;
-		flex-flow: column nowrap;
-	}
+  .header {
+    height: 90px;
+    flex-flow: column nowrap;
+  }
 
-	.info-task__active-tasks,
-	.info-task__finished-tasks,
-	.info-developer__name-year {
-		font-size: 14px;
-	}
+  .info-task__active-tasks,
+  .info-task__finished-tasks,
+  .info-developer__name-year {
+    font-size: 14px;
+  }
 }
 
 .logo__menu,
@@ -398,26 +405,26 @@ body {
 .user__button,
 .user-menu,
 .list-header__menu {
-	cursor: pointer;
+  cursor: pointer;
 }
 .list-content__task {
-	cursor: move;
+  cursor: move;
 }
 
 @keyframes selectTask {
-	0% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(2deg);
-	}
-	50% {
-		transform: rotate(0deg);
-	}
-	75% {
-		transform: rotate(-2deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
