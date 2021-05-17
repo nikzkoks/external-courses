@@ -1,138 +1,138 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Awesome Kanban Board</title>
-  </head>
-  <body>
-    <div class="app">
-      <header class="header">
-        <div class="logo">
-          <div class="logo__menu"></div>
-          <div class="logo__title">
-            <span>Awesome Kanban Board</span>
-          </div>
-        </div>
-        <div class="user">
-          <button class="user__button">
-            <div class="add-list__img"></div>
-            <div class="add-list__title">Create new list</div>
-          </button>
-          <div class="user-menu">
-            <div class="user-menu__avatar"></div>
-            <div class="user-menu__dropdown"></div>
-          </div>
-        </div>
-      </header>
-      <section class="main">
-        <article class="main__list">
-          <div class="list-header">
-            <div class="list-header__title">Backlog</div>
-            <div class="list-header__menu">...</div>
-          </div>
-          <div class="list-content">
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Login page – performance issues</p>
-            </div>
-          </div>
-          <div class="list-footer">
-            <button class="list-footer__add-card">
-              <span class="add-card__img">+</span>
-              <span class="add-card__title">Add card</span>
-            </button>
-          </div>
-        </article>
-        <article class="main__list">
-          <div class="list-header">
-            <div class="list-header__title">Ready</div>
-            <div class="list-header__menu">...</div>
-          </div>
-          <div class="list-content">
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Shop page – performance issues</p>
-            </div>
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Checkout bugfix</p>
-            </div>
-          </div>
-          <div class="list-footer">
-            <button class="list-footer__add-card">
-              <span class="add-card__img">+</span>
-              <span class="add-card__title">Add card</span>
-            </button>
-          </div>
-        </article>
-        <article class="main__list">
-          <div class="list-header">
-            <div class="list-header__title">In Progress</div>
-            <div class="list-header__menu">...</div>
-          </div>
-          <div class="list-content">
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">User page – performance issues</p>
-            </div>
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Auth bugfix</p>
-            </div>
-          </div>
-          <div class="list-footer">
-            <button class="list-footer__add-card">
-              <span class="add-card__img">+</span>
-              <span class="add-card__title">Add card</span>
-            </button>
-          </div>
-        </article>
-        <article class="main__list">
-          <div class="list-header">
-            <div class="list-header__title">Finished</div>
-            <div class="list-header__menu">...</div>
-          </div>
-          <div class="list-content">
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Main page – performance issues</p>
-            </div>
-            <div class="list-content__task">
-              <div class="task__delete-button"></div>
-              <p class="task__text">Main page bugfix</p>
-            </div>
-          </div>
-          <div class="list-footer">
-            <button class="list-footer__add-card">
-              <span class="add-card__img">+</span>
-              <span class="add-card__title">Add card</span>
-            </button>
-          </div>
-        </article>
-      </section>
-      <footer class="footer">
-        <div class="info-task">
-          <div class="info-task__active-tasks">
-            <label for="active-task">Active tasks: </label>
-            <span id="active-task"> &lt;N &gt; </span>
-          </div>
-          <div class="info-task__finished-tasks">
-            <label for="finished-task">Finished tasks:</label>
-            <span id="finished-task"> &lt;M &gt; </span>
-          </div>
-        </div>
-        <div class="info-developer">
-          <div class="info-developer__name-year">
-            Kanban board by <span id="developer-name">Nikita Khobotov</span>,
-            <span id="developer-year">2021</span>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="const.js"></script>
-    <script src="script.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Awesome Kanban Board</title>
+	</head>
+	<body>
+		<div class="app">
+			<header class="header">
+				<div class="logo">
+					<div class="logo__menu"></div>
+					<div class="logo__title">
+						<span>Awesome Kanban Board</span>
+					</div>
+				</div>
+				<div class="user">
+					<button class="user__button">
+						<div class="add-list__img"></div>
+						<div class="add-list__title">Create new list</div>
+					</button>
+					<div class="user-menu">
+						<div class="user-menu__avatar"></div>
+						<div class="user-menu__dropdown"></div>
+					</div>
+				</div>
+			</header>
+			<section class="main">
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Backlog</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Login page – performance issues</p>
+						</div>
+					</div>
+					<div class="list-footer">
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Ready</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Shop page – performance issues</p>
+						</div>
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Checkout bugfix</p>
+						</div>
+					</div>
+					<div class="list-footer">
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">In Progress</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">User page – performance issues</p>
+						</div>
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Auth bugfix</p>
+						</div>
+					</div>
+					<div class="list-footer">
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
+					</div>
+				</article>
+				<article class="main__list">
+					<div class="list-header">
+						<div class="list-header__title">Finished</div>
+						<div class="list-header__menu">...</div>
+					</div>
+					<div class="list-content">
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Main page – performance issues</p>
+						</div>
+						<div class="list-content__task">
+							<div class="task__delete-button"></div>
+							<p class="task__text">Main page bugfix</p>
+						</div>
+					</div>
+					<div class="list-footer">
+						<button class="list-footer__add-card">
+							<span class="add-card__img">+</span>
+							<span class="add-card__title">Add card</span>
+						</button>
+					</div>
+				</article>
+			</section>
+			<footer class="footer">
+				<div class="info-task">
+					<div class="info-task__active-tasks">
+						<label for="active-task">Active tasks: </label>
+						<span id="active-task"> &lt;N &gt; </span>
+					</div>
+					<div class="info-task__finished-tasks">
+						<label for="finished-task">Finished tasks:</label>
+						<span id="finished-task"> &lt;M &gt; </span>
+					</div>
+				</div>
+				<div class="info-developer">
+					<div class="info-developer__name-year">
+						Kanban board by <span id="developer-name">Nikita Khobotov</span>,
+						<span id="developer-year">2021</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="task.js"></script>
+		<script src="menu.js"></script>
+	</body>
 </html>
