@@ -1,7 +1,7 @@
 const search = document.getElementById('search');
 const text = document.getElementById('text');
 
-const time = 200;
+const time = 500;
 const mockArray = [
 	'123',
 	'234',
@@ -30,16 +30,14 @@ function searchItem(...rest) {
 }
 
 function debounce(callback) {
-	let isRunning = false;
+	let isRunning;
 
-	return function () {
-		if (isRunning) return;
-		callback.apply(this, ...rest);
-		isRunning = true;
-		setTimeout(() => {
-			isRunning = false;
+	return (...rest) => {
+		clearTimeout(isRunning);
+		isRunning = setTimeout(() => {
+			callback.apply(this, ...rest);
 		}, time);
 	};
 }
 
-search.addEventListener('input', debounce(searchItem(1, 2, 3)));
+search.addEventListener('input', debounce(searchItem));
