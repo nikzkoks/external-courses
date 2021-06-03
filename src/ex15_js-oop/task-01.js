@@ -1,9 +1,11 @@
 /* eslint-disable no-return-assign */
 function Sweet(name, weight) {
 	this.name = name;
-	this.weight = weight;
-	Sweet.prototype.getWeight = function () {
-		return this.weight;
+	this.getWeight = function () {
+		return (this.weight = weight);
+	};
+	this.isSweet = function () {
+		return this instanceof Sweet;
 	};
 }
 
@@ -21,22 +23,16 @@ let bounty = new Sweet('Bounty', 80);
 let gifts = {
 	gift: [twix, mars, bounty],
 	search(sweet) {
-		for (let item of this.gift) {
-			if (item.name === sweet) {
-				return true;
-			}
-		}
-		return false;
+		return this.gift.some((item) => item.name === sweet);
 	},
-	searchGlobal(sweet) {
-		return sweet instanceof Sweet;
-	},
+
 	getWeight() {
-		result = 0;
-		for (let item of this.gift) {
-			result += item.getWeight();
-		}
-		return result + ' gramm';
+		return (
+			this.gift.reduce(
+				(accumulator, currentValue) => accumulator + currentValue.getWeight(),
+				0
+			) + ' gramm'
+		);
 	},
 };
 

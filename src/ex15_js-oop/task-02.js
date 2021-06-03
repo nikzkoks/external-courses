@@ -7,14 +7,15 @@ class ElectricalAppliance {
 	}
 	enable() {
 		this.enabled = true;
-		this.intakePower = this.intakePower;
 	}
 	disable() {
 		this.enabled = false;
-		this.intakePower = 0;
 	}
 	getPower() {
-		return this.intakePower;
+		if (this.enabled) {
+			return this.intakePower;
+		}
+		return 0;
 	}
 }
 
@@ -39,22 +40,18 @@ let tv = new TV('Sony');
 let house = {
 	room: [pc, tv, lamp, lamp],
 	search(nameElectricalAppliance) {
-		for (let item of this.room) {
-			if (item.name === nameElectricalAppliance) {
-				return true;
-			}
-		}
-		return false;
+		return this.room.some((item) => item.name === nameElectricalAppliance);
 	},
 	searchGlobal(nameElectricalAppliance) {
 		return nameElectricalAppliance instanceof ElectricalAppliance;
 	},
 	getIntakePower() {
-		result = 0;
-		for (let item of this.room) {
-			result += item.getPower();
-		}
-		return result + ' wwat';
+		return (
+			this.room.reduce(
+				(accumulator, currentValue) => accumulator + currentValue.getPower(),
+				0
+			) + ' wwat'
+		);
 	},
 };
 
