@@ -1,0 +1,27 @@
+.main {
+	display: flex;
+	scroll-snap-type: x mandatory;
+	overflow-x: auto;
+	min-height: 300px;
+	max-height: 600px;
+	padding: 10px 20px;
+	background: #0079bf;
+}
+
+.main::-webkit-scrollbar {
+	width: 12px;
+}
+
+.main::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+
+.main::-webkit-scrollbar-thumb {
+	background: #cbcbcb;
+	border-radius: 10px;
+}
+
+.main__no-lists {
+	font-size: 1.5em;
+	color: white;
+}

@@ -1,0 +1,64 @@
+.footer {
+	height: 55px;
+	background: #0067a3;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info-task {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 70px;
+}
+
+.info-task__active-tasks {
+	font-size: 18px;
+	line-height: 21px;
+	color: #ffffff;
+}
+
+.info-task__finished-tasks {
+	font-size: 18px;
+	line-height: 21px;
+	color: #ffffff;
+	margin-left: 35px;
+}
+
+.info-developer {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin-right: 24px;
+}
+
+.info-developer__name-year {
+	font-size: 18px;
+	line-height: 21px;
+	color: #ffffff;
+}
+
+@media (max-width: 768px) {
+	.footer {
+		height: 110px;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.info-task {
+		margin-left: 0px;
+	}
+}
+
+@media (max-width: 400px) {
+	.info-task__active-tasks,
+	.info-task__finished-tasks,
+	.info-developer__name-year {
+		font-size: 14px;
+	}
+}
