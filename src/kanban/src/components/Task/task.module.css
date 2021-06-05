@@ -1,0 +1,66 @@
+.list-content__task {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	margin: 15px 12px 0px 12px;
+	padding: 10px;
+	background: #ffffff;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: move;
+}
+
+.task__text {
+	margin: 0;
+}
+
+.list-content__task_selector {
+	margin: 15px 12px 0px 12px;
+	padding: 5px;
+	background: #ffffff;
+	border: none;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.task__delete-button {
+	border-radius: 5px;
+	margin: 0px 5px 0px 0px;
+	width: 20px;
+	height: 20px;
+	background: url(../../img/delete-task.svg);
+
+	z-index: 20;
+}
+
+.task__delete-button:hover {
+	box-shadow: 0px 0px 4px 2px #0079bf;
+	cursor: pointer;
+}
+
+.list-content__task:hover {
+	background: rgba(0, 121, 191, 0.7);
+	border: 1px solid #0079bf;
+	animation: selectTask 0.2s ease-in;
+	z-index: 10;
+}
+
+@keyframes selectTask {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-2deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}

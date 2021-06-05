@@ -1,0 +1,31 @@
+{
+	"name": "kanban-awesome",
+	"version": "1.0.0",
+	"description": "Kanban Board",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"start": "webpack serve --hot"
+	},
+	"author": "Nikita Khobotov",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.12.9",
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+		"@babel/preset-env": "^7.12.7",
+		"babel-loader": "^8.2.2",
+		"css-loader": "^5.0.1",
+		"file-loader": "^6.2.0",
+		"html-loader": "^1.3.2",
+		"html-webpack-plugin": "^4.5.0",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.9.0",
+		"webpack-cli": "^4.2.0",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"dependencies": {
+		"lodash": "^4.17.20"
+	}
+}
